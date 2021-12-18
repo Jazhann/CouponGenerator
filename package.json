@@ -1,0 +1,24 @@
+{
+  "name": "coupongenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "run": "node ./dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jazhann/CouponGenerator.git"
+  },
+  "author": "Daniel Rodríguez Gómez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jazhann/CouponGenerator/issues"
+  },
+  "homepage": "https://github.com/Jazhann/CouponGenerator#readme",
+  "dependencies": {
+    "@types/node": "^17.0.0",
+    "typescript": "^4.5.4"
+  }
+}
