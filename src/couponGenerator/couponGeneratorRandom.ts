@@ -9,7 +9,7 @@ export class couponGeneratorRandom implements CouponGenerator {
         let coupons = [];
         for (let i = 0; i < amount; i++) {
             const coupon = Math.floor(Math.random() * +max);
-            coupons.some(c => c === coupon) ? i-- : coupons.push(coupon.toString());
+            coupons.some(c => c === coupon.toString()) ? i-- : coupons.push(coupon.toString());
         }
         return coupons;
     }
