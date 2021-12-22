@@ -1,15 +1,13 @@
-import { CouponGenerator } from "./couponGeneratorBase";
+import { CouponGeneratorInterface } from "./couponGeneratorInterface";
 
-export class couponGeneratorRandom implements CouponGenerator {
+export class couponGeneratorRandom implements CouponGeneratorInterface {
+
     getCoupons(amount: number, length: number): string[] {
-        let max = '';
-        while(max.length < length) {
-            max += '9';
-        }
+        let max = Math.pow(10, length) - 1;
         let coupons = [];
         for (let i = 0; i < amount; i++) {
-            const coupon = Math.floor(Math.random() * +max);
-            coupons.some(c => c === coupon.toString()) ? i-- : coupons.push(coupon.toString());
+            let coupon = Math.floor(Math.random() * +max).toString().padStart(length, '0');
+            coupons.some(c => c === coupon) ? i-- : coupons.push(coupon);
         }
         return coupons;
     }

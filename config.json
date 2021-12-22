@@ -1,5 +1,5 @@
 {
     "amount": 10,
-    "type": "random",
+    "type": "secuencial",
     "length": 6
 }

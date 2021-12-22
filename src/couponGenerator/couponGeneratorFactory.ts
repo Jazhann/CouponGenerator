@@ -1,16 +1,17 @@
-import { CouponGenerator } from "./couponGeneratorBase";
+import { CouponGeneratorInterface } from "./couponGeneratorInterface";
 import { couponGeneratorRandom } from "./couponGeneratorRandom";
 import { couponGeneratorSecuencial } from "./couponGeneratorSecuencial";
 
 export class CouponGeneratorFactory {
-    create(type): CouponGenerator | Error {
+
+    create(type): CouponGeneratorInterface {
         switch(type) {
             case 'secuencial':
                 return new couponGeneratorSecuencial();
             case 'random':
                 return new couponGeneratorRandom();
             default:
-                return new Error('Generator type not supported');
+                throw new Error('Generator type not supported');
         }
     }
 }
